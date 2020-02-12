@@ -1,0 +1,11 @@
+body {
+    padding: 50px;
+}
+
+p.site-title > a {
+    color: #f00;
+}
+
+#algolia-search-box > input {
+    background-color: #aaa;
+}

@@ -202,7 +202,6 @@ if ( ! function_exists( 'um_theme_scripts' ) ) {
 			wp_register_style( 'um-theme-woocommerce', UM_THEME_URI . 'inc/css/um-theme-woocommerce.css' );
 			wp_enqueue_style( 'um-theme-woocommerce', UM_THEME_VERSION );
 		}
-
 	}
 }
 
@@ -361,3 +360,10 @@ if ( ! function_exists( 'um_theme_update_theme_license' ) ) {
 if ( class_exists( 'WP_Job_Manager' ) ) {
 	require_once UM_THEME_DIR . 'core-functions/core-job-manager.php';
 }
+
+
+function my_custom_styles(){
+	wp_register_style( 'custom', get_template_directory_uri() . '/custom.css' );
+	wp_enqueue_style( 'custom' );
+}
+add_action('wp_enqueue_scripts', 'my_custom_styles', 1000);
